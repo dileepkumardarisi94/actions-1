@@ -12,5 +12,8 @@ jobs:
             - name: List and Read files
               run: |
                 echo "My First GitHub Action Job"
-                ls -ltr
+                ls -ltra
                 cat README.md
+            
+            - name: Generate ASCII Artwork
+              run: cowsay -f dragon "Run for cover, I am a DRAGON......RAWR" >> dragon.txt
