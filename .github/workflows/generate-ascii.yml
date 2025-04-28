@@ -3,17 +3,32 @@ name: Generate ASCII Artwork
 on: push
 
 jobs:
-  first_job:  
+  build_job:  
     runs-on: ubuntu-latest
-    steps:      
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-    
-      - name: List all files
-        run: ls -lart 
+    steps:
+        - name: OS Version
+          run: cat /etc/os-release     
+      
+        - name: Checkout Repo
+          uses: actions/checkout@v4
 
-      - name: Execute Script 
-        run: |
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Current Working Directory
+          run: pwd
+
+        - name: Check if the dragon file exists
+          run: ls | grep -i dragon.txt
+
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+        - name: List all files
+          run: ls -lart 
+
+        - name: Execute Script 
+          run: |
             chmod +x generate-ascii.sh
             ./generate-ascii.sh
             
