@@ -9,12 +9,15 @@ jobs:
       - name: Welcome Message
         run: echo "This is My First Job"
 
+      - name: Current Working Directory
+        run: pwd
+        
       - name: List all files
         run: ls -lart
       
       - name: Read file
         run: cat README.md
-        
+
       # - name: Checkout Repo
       #   uses: actions/checkout@v4
         
