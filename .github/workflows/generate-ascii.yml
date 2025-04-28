@@ -9,10 +9,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
     
+      - name: List all files
+        run: ls -lart 
+
       - name: Execute Script 
         run: |
-          chmod +x generate-ascii.sh
-          ./generate-ascii.sh
+            chmod +x generate-ascii.sh
+            ./generate-ascii.sh
             
     #   - name: Install Cowsay
     #     run: sudo apt-get install cowsay -y 
