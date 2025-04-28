@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Welcome Message
-        run: echo "Welcome to the world of Learning. This is My First Job!!"
+        run: echo "Welcome to the world of Learning. This is My First Job, more to come!!"
+
+      - name: Print Env Variable
+        run: echo $GITHUB_WORKSPACE
 
       - name: Current Working Directory
         run: pwd
